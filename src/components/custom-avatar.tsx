@@ -3,7 +3,7 @@ import React from "react";
 import type { AvatarProps } from "antd";
 import { Avatar as AntdAvatar } from "antd";
 
-// import { getNameInitials, getRandomColorFromString } from "@/utilities";
+import { getNameInitials, getRandomColorFromString } from "@/utilities";
 
 type Props = AvatarProps & {
   name?: string;
@@ -12,10 +12,12 @@ type Props = AvatarProps & {
 const CustomAvatarComponent = ({ name = "", style, ...rest }: Props) => {
   return (
     <AntdAvatar
-      alt={'TopG'}
+      alt={name}
       size="small"
       style={{
-        backgroundColor: "#87d068",
+        backgroundColor: rest?.src
+          ? "transparent"
+          : getRandomColorFromString(name),
         display: "flex",
         alignItems: "center",
         border: "none",
@@ -23,7 +25,7 @@ const CustomAvatarComponent = ({ name = "", style, ...rest }: Props) => {
       }}
       {...rest}
     >
-      {name};
+      {getNameInitials(name)}
     </AntdAvatar>
   );
 };
