@@ -16,7 +16,7 @@ export const GitHubBanner = () => {
       className="banner bg-top-announcement"
       style={{
         width: "100%",
-        height: "48px",
+        height: "20px",
       }}
     >
       <div
@@ -124,59 +124,8 @@ export const GitHubBanner = () => {
             </div>
           </div>
         </div>
-        <Text />
       </div>
     </div>
-  );
-};
-
-const Text = () => {
-  return (
-    <a
-      className="gh-link"
-      href="https://github.com/refinedev/refine/tree/master/examples/app-crm-minimal"
-      target="_blank"
-      rel="noreferrer"
-      style={{
-        position: "absolute",
-        height: "100%",
-        padding: "0 60px",
-        display: "flex",
-        flexWrap: "nowrap",
-        whiteSpace: "nowrap",
-        justifyContent: "center",
-        alignItems: "center",
-        backgroundImage:
-          "linear-gradient(90deg, rgba(31, 63, 72, 0.00) 0%, #1F3F48 10%, #1F3F48 90%, rgba(31, 63, 72, 0.00) 100%)",
-      }}
-    >
-      <div
-        style={{
-          color: "#fff",
-          display: "flex",
-          flexDirection: "row",
-          alignItems: "center",
-          justifyContent: "center",
-          gap: "8px",
-          fontSize: "16px",
-        }}
-      >
-        <span
-          style={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "center",
-            alignItems: "center",
-            fontSize: "32px",
-          }}
-        >
-          💡
-        </span>
-        <span className="text">
-          This example is open-source! Get the full source code.
-        </span>
-      </div>
-    </a>
   );
 };
 
