@@ -2,7 +2,7 @@ import { Authenticated, GitHubBanner, Refine } from "@refinedev/core";
 import { DevtoolsPanel, DevtoolsProvider } from "@refinedev/devtools";
 import { RefineKbar, RefineKbarProvider } from "@refinedev/kbar";
 import { Layout } from "./components/layout";
-import { useNotificationProvider } from "@refinedev/antd";
+import { Create, useNotificationProvider } from "@refinedev/antd";
 import "@refinedev/antd/dist/reset.css";
 import { dataProvider , liveProvider , authProvider } from "./providers";
 import routerBindings, {
@@ -54,7 +54,10 @@ function App() {
                   }
                 >
                    <Route index element= {<Home />} />
-                   <Route path="/companies" element= {<CompanyList/>} />
+                   <Route path="/companies">
+                    <Route index element = {<CompanyList />} />
+                    <Route path = "new" element= {<Create />} />
+                   </Route>
                   </Route>
                 </Routes>
                 <RefineKbar />
